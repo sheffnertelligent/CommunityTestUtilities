@@ -1,0 +1,31 @@
+<scriptedContentFragments>
+	<scriptedContentFragment name="Calendar Url Test Widget" version="10.2.0.0" description="" instanceIdentifier="9c9ad738f884423a974caacce362a194" theme="" isCacheable="false" varyCacheByUser="false" showHeaderByDefault="true" cssClass="" lastModified="2019-04-24 16:36:11Z" provider="7bb87a0cc5864a9392ae5b9e5f9747b7">
+		<contentScript language="Velocity"><![CDATA[#set($groupId = $core_v2_group.Current.Id)
+#set($calendarId = $calendar_v1_calendars.Current.Id)
+#set($eventId = $calendar_v1_events.Current.Id)
+
+<pre>
+Current Group:    $groupId
+Current Calendar: $calendarId
+Current Event:    $eventId
+Current Page:     $calendar_v1_urls.Current()
+
+HomePage:         <a href="$calendar_v1_urls.HomePage($calendarId)">$calendar_v1_urls.HomePage($calendarId)</a>
+Home:             <a href="$calendar_v1_urls.Home()">$calendar_v1_urls.Home()</a>
+AddCalendar:      <a href="$calendar_v1_urls.A($groupId)">$calendar_v1_urls.AddCalendar($groupId)</a>
+GroupHome:        <a href="$calendar_v1_urls.GroupHome($groupId)">$calendar_v1_urls.GroupHome($groupId)</a>
+EditCalender:     <a href="$calendar_v1_urls.EditCalendar($calendarId)">$calendar_v1_urls.EditCalendar($calendarId)</a>
+Event:            <a href="$calendar_v1_urls.Event($eventId, false)">$calendar_v1_urls.Event($eventId, false)</a>
+DownloadEvent:    <a href="$calendar_v1_urls.DownloadEvent($eventId)">$calendar_v1_urls.DownloadEvent($eventId)</a>
+RegisteredUsers:  <a href="$calendar_v1_urls.RegisteredUsers($eventId)">$calendar_v1_urls.RegisteredUsers($eventId)</a>
+EventCommentRSS:  <a href="$calendar_v1_urls.EventCommentRSS($eventId)">$calendar_v1_urls.EventCommentRSS($eventId)</a>
+AddEvent:         <a href="$calendar_v1_urls.AddEvent($calendarId)">$calendar_v1_urls.AddEvent($calendarId)</a>
+CalendarGroupRss: <a href="$calendar_v1_urls.CalendarGroupRss($groupId)">$calendar_v1_urls.CalendarGroupRss($groupId)</a>
+TagBrowser:       <a href="$calendar_v1_urls.TagBrowser()">$calendar_v1_urls.TagBrowser()</a>
+TagBrowser:       <a href="$calendar_v1_urls.TagBrowser($calendarId)">$calendar_v1_urls.TagBrowser($calendarId)</a>
+CalendarRss:      <a href="$calendar_v1_urls.CalendarRss($calendarId)">$calendar_v1_urls.CalendarRss($calendarId)</a>
+</pre>]]></contentScript>
+		<headerScript language="Velocity" />
+		<additionalCssScript language="Velocity" />
+	</scriptedContentFragment>
+</scriptedContentFragments>
